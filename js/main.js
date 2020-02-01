@@ -1,6 +1,8 @@
 var menu = $('.menu');
 var items = $('.menu-item');
 var icons = $('.submenu a');
+var panels = $('.board section');
+var tabs = $('.tab a');
 icons.attr('class', 'icon-dot-circled');
 
 icons.on('mouseover focusin', function(e){
@@ -20,4 +22,10 @@ items.on('click keyup focus', function(e){
 		items.removeClass('menu-act');
 		$(this).addClass('menu-act');
 	}
+});
+
+tabs.click(function(e){
+	e.preventDefault();
+	panels.removeClass('board-act');
+	$(this).parent().parent().addClass('board-act');
 });
